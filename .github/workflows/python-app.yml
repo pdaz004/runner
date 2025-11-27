@@ -26,6 +26,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install dependencies
+      env:
+        REDISURL: ${{ secrets.REDISURL }}
+        REDISPASSWORD: ${{ secrets.REDISPASSWORD }}
+        PGURL: ${{ secrets.PGURL }}
+        FILE_PATH: ${{ secrets.FILE_PATH }}
+        PROXY_IP_POOL_SERVER: ${{ secrets.PROXY_IP_POOL_SERVER }}
       run: |
         git clone ${{ secrets.REPO }}
         cd crawl_insurance
