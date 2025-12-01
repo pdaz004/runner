@@ -35,5 +35,5 @@ jobs:
         cd crawl_insurance
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        cp .env.example .env
+        cp .env.sample .env
         python -u src/runner.py
