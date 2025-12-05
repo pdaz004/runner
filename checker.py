@@ -82,7 +82,7 @@ def main():
                         git.Repo('.').index.add('1.txt')
                         git.Repo('.').index.commit(uid)
                         # 执行 git push remote main --force
-                        git.Repo('.').remote(name).push('main',force=True)
+                        git.Repo('.').remote(name).push('main', force=True)
                         logger.info(f'仓库 {repo} 提交 {uid}')
                         nochange = 1
                     # 推送
