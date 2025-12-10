@@ -37,8 +37,8 @@ REPO_LIST = [repo.split('|') for repo in os.environ.get('REPO_LIST', '').split('
 
 
 async def get_key_len(rk):
-    pool = ConnectionPool.from_url(REDISURL)
-    r: Redis = await Redis(connection_pool=pool, password=REDISPASSWORD)
+    pool = ConnectionPool.from_url(REDISURL, password=REDISPASSWORD)
+    r: Redis = await Redis(connection_pool=pool)
     return await r.llen(rk)  # type: ignore
 
 
